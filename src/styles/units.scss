@@ -1,0 +1,8 @@
+@use 'sass:math';
+
+@import './vars.scss';
+
+@function rem($px) {
+    $res: math.div($px, $basicFontSize) + rem;
+    @return $res;
+}

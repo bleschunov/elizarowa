@@ -1,0 +1,55 @@
+$gray50: #F9FAFB;
+$gray100: #F2F4F7;
+$gray200: #EAECF0;
+$gray300: #D0D5DD;
+$gray400: #98A2B3;
+$gray500: #667085;
+$gray600: #475467;
+$gray700: #344054;
+$gray800: #1D2939;
+$gray900: #101828;
+
+$primary25: #FCFAFF;
+$primary50: #F9F5FF;
+$primary100: #F4EBFF;
+$primary200: #E9D7FE;
+$primary300: #D6BBFB;
+$primary600: #7F56D9;
+$primary700: #6941C6;
+
+$success300: #6CE9A6;
+$success500: #12B76A;
+$error700: #027A48;
+
+$error100: #FEE4E2;
+$error300: #FDA29B;
+$error500: #F04438;
+$error700: #B42318;
+
+$rose100: #FFE4E8;
+$rose200: #FECDD6;
+$rose400: #FD6F8E;
+$rose500: #F63D68;
+
+$white: #FFFFFF;
+$black: #000000;
+
+$accent: #424B5A;
+$background: #E7F3F1;
+$secondary: #F2EAE6;
+
+$telegramGradient: #27A8EA;
+$vkColor: #2789F6;
+
+$containerPadding: 24px 16px;
+
+$basicFontSize: 16px;
+
+:export {
+    telegramGradient: $telegramGradient;
+    vkColor: $vkColor;
+    success500: $success500;
+    error500: $error500;
+    gray500: $gray500
+}
+

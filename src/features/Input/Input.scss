@@ -1,0 +1,141 @@
+@import '../../styles/vars.scss';
+@import '../../styles/units.scss';
+@import '../../styles/fonts.scss';
+@import '../../styles/shadows.scss';
+
+.input {
+    display: inline-flex;
+    flex-direction: column;
+    gap: rem(6px);
+
+    &__label {
+        color: $gray700;
+        @include getFontStyles('text-sm', 'medium');
+    }
+
+    &__box {
+        position: relative;
+
+        border: 1px solid $gray300;
+        border-radius: rem(8px);
+        padding: 0 rem(14px);
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: rem(8px);
+
+        &_success {
+            border-color: $success300;
+        }
+
+        &_error {
+            border-color: $error300;
+        }
+    }
+
+    &__icon_success, &__icon_error {
+        display: none;
+    }
+
+    &__hint {
+        color: $gray500;
+        @include getFontStyles('text-sm', 'regular');
+    }
+
+    &__input {
+        color: $gray900;
+        padding: rem(10px) 0;
+
+        &::placeholder {
+            color: $gray500;
+        }
+    }
+
+    $itemHeight: rem(44px);
+
+    &__window {
+        display: none;
+        position: absolute;
+        width: calc(100% + 2px);
+
+        bottom: 0;
+        transform: translateY(calc( 100% + rem(8px) ));
+
+        max-height: calc($itemHeight * 5);
+        overflow: scroll;
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+
+        @include getShadow('shadow-lg');
+        border: 1px solid $gray100;
+        border-radius: rem(8px);
+        background-color: $white;
+    }
+
+    &__item {
+        cursor: pointer;
+        padding: rem(10px) rem(14px);
+        @include getFontStyles('text-md', 'regular');
+
+        height: $itemHeight;
+        background-color: $white;
+
+        &:hover {
+            background-color: $gray50;
+        }
+
+        &_focused {
+            background-color: $gray50;
+        }
+    }
+
+    &_error {
+        & .input__box {
+            border-color: $error300; 
+        }
+
+        & .input__hint {
+            color: $error500;
+        }
+
+        & .input__icon_error {
+            display: inline-block;
+        }
+    }
+
+    &_success {
+        & .input__box {
+            border-color: $success300;
+        }
+
+        & .input__hint {
+            color: $success500;
+        }
+
+        & .input__icon_success {
+            display: inline-block;
+        }
+    }
+
+    &_focus {
+        & .input__box {
+            @include getShadow('focusedShadow-xs-primary');
+        }
+
+        & .input__window {
+            display: block;
+        }
+
+        &:focus {
+            color: red;
+        }
+    }
+
+    &_disabled {
+        & .input__box {
+            background-color: $gray50;
+        }
+    }
+}

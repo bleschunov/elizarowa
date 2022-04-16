@@ -1,0 +1,128 @@
+@import '../../styles/vars.scss';
+@import '../../styles/units.scss';
+@import '../../styles/fonts.scss';
+@import '../../styles/shadows.scss';
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    cursor: pointer;
+    border-radius: rem(8px);
+    @include getShadow('shadow-xs');
+
+    transition: background 300ms;
+
+    &[disabled] {
+        cursor: not-allowed;
+    }
+
+    &_2xl {
+        height: rem(60px);
+        padding: rem(16px) rem(28px);
+        @include getFontStyles('text-lg', 'medium');
+
+        gap: rem(16px);
+
+        &_onlyIcon {
+            padding: rem(18px)
+        }
+    }
+
+    &_xl {
+        height: rem(48px);
+        padding: rem(12px) rem(20px);
+        @include getFontStyles('text-md', 'medium');
+
+        gap: rem(8px);
+
+        &_onlyIcon {
+            padding: rem(16px)
+        }
+    }
+
+    &_lg {
+        height: rem(44px);
+        padding: rem(10px) rem(20px);
+        @include getFontStyles('text-md', 'medium');
+
+        gap: rem(8px);
+        
+        &_onlyIcon {
+            padding: rem(14px)
+        }
+    }
+
+    &_md {
+        height: rem(40px);
+        padding: rem(10px) rem(16px);
+        @include getFontStyles('text-sm', 'medium');
+
+        gap: rem(8px);
+
+        &_onlyIcon {
+            padding: rem(12px)
+        }
+    }
+
+    &_sm {
+        height: rem(36px);
+        padding: rem(8px) rem(14px);
+        @include getFontStyles('text-sm', 'medium');
+
+        gap: rem(8px);
+
+        &_onlyIcon {
+            padding: rem(10px)
+        }
+    }
+
+    &_primary {
+        background-color: $rose400;
+        color: $white;
+
+        &:hover {
+            background-color: $rose500;
+        }
+
+        &:focus {
+            @include getShadow('focusedShadow-xs-primary');
+        }
+
+        &[disabled] {
+            cursor: not-allowed;
+            background-color: $rose200;
+        }
+    }
+
+    &_telegram, &_vk {
+        background-color: $white;
+        border: 1px solid $gray300;
+        color: $gray700;
+
+        &:hover {
+            background-color: $gray50;
+        }
+
+        &:focus {
+            @include getShadow('focusedShadow-xs-gray');
+        }
+    }
+
+    &_linkGray {
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0;
+        color: $accent;
+
+        &:hover {
+            color: $rose400;
+        }
+
+        &[disabled] {
+            color: $gray300;
+        }
+    }
+}
+
