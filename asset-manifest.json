@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/elizarowa/static/css/main.75b35386.css",
+    "main.js": "/elizarowa/static/js/main.3598fb42.js",
+    "index.html": "/elizarowa/index.html",
+    "main.75b35386.css.map": "/elizarowa/static/css/main.75b35386.css.map",
+    "main.3598fb42.js.map": "/elizarowa/static/js/main.3598fb42.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.75b35386.css",
+    "static/js/main.3598fb42.js"
+  ]
+}
