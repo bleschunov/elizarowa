@@ -4,6 +4,16 @@
 .footer {
     background-color: $secondary;
 
+    &__container {
+        padding: rem(16px) rem($containerPaddingX);
+        max-width: $containerMaxWidth;
+        margin: 0 auto;
+
+        @media screen and (min-width: 1000px) {
+            padding: rem(16px) rem($containerLargePaddingX);
+        }
+    }
+
     &__flex {
         display: flex;
         flex-direction: column;

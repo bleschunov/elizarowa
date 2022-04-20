@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import './Button.scss'
 
 
-const Button = ({ className, hierarchy, type, size, children, icon, disabled }) => {
+const Button = ({ className, hierarchy, type, size, children, icon, disabled, href }) => {
     const classes = classNames(
         className,
         'button',
@@ -15,12 +15,22 @@ const Button = ({ className, hierarchy, type, size, children, icon, disabled }) 
         }
     )
 
-    return (
-        <button className={classes} type={type} disabled={disabled}>
-            {icon}
-            {children}
-        </button>
-    )
+
+    if (!href) {
+        return (
+            <button className={classes} type={type} disabled={disabled}>
+                {icon}
+                {children}
+            </button>
+        )
+    } else {
+        return (
+            <a href={href} className={classes} type={type} disabled={disabled}>
+                {icon}
+                {children}
+            </a>
+        )
+    }
 }
 
 Button.propTypes = {

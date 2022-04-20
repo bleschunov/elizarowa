@@ -4,9 +4,10 @@ import Icon from '../Icon/Icon'
 import './Button.scss'
 import vars from '../../styles/vars.scss'
 
-const TelegramButton = ({ children }) => {
+const TelegramButton = ({ children, ...props }) => {
     return (
         <Button 
+            {...props}
             size="lg"
             hierarchy="telegram"
             type="button"

@@ -4,6 +4,16 @@
 .prices {
     background-color: $background;
 
+    &__container {
+        padding: rem($containerPaddingY) rem($containerPaddingX);
+        max-width: rem(1280px);
+        margin: 0 auto;
+
+        @media screen and (min-width: 1000px) {
+            padding: rem($containerLargePaddingY) rem($containerLargePaddingX);
+        }
+    }
+
     &__flex {
         display: flex;
         flex-direction: column;

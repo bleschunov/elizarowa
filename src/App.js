@@ -1,3 +1,4 @@
+import Loader from './features/Loader/Loader'
 import Header from './features/Header/Header'
 import Hero from './features/Hero/Hero'
 import About from './features/About/About'
@@ -8,13 +9,6 @@ import Calc from './features/Calc/Calc'
 import Callback from './features/Callback/Callback'
 import Telegram from './features/Telegram/Telegram'
 import Footer from './features/Footer/Footer'
-
-import { Formik, Form } from 'formik'
-import * as Yup from 'yup'
-import Input from './features/Input/Input'
-import DropdownInput from './features/Input/DropdownInput'
-import Select from './features/Input/Select'
-import Checkbox from './features/Checkbox/Checkbox'
 
 import 'animate.css';
 import './App.scss'

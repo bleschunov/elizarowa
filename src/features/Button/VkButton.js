@@ -4,9 +4,10 @@ import Icon from '../Icon/Icon'
 import './Button.scss'
 import vars from '../../styles/vars.scss'
 
-const VkButton = ({ children }) => {
+const VkButton = ({ children, ...props }) => {
     return (
         <Button 
+            {...props}
             size="lg"
             hierarchy="vk"
             type="button"

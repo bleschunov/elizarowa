@@ -7,27 +7,27 @@ import './Footer.scss'
 const Footer = () => {
     return (
         <footer className="footer">
-            <Container>
+            <div className="footer__container">
                 <div className="footer__flex">
                     <div className="footer__top">
-                        <TelegramButton>Елизарова | Дети</TelegramButton>
-                        <TelegramButton>Мастерская Елизаровой</TelegramButton>
+                        <TelegramButton href="https://t.me/ekaterinaelizarowapro">Елизарова | Дети</TelegramButton>
+                        <TelegramButton href="https://t.me/ekaterinaelizarowamasterskaya">Мастерская Елизаровой</TelegramButton>
                         <div className="footer__bottomIcons">
-                            <TelegramButton />
-                            <VkButton />
+                            <TelegramButton href="https://t.me/ekaterina_elizarowa" />
+                            <VkButton href="https://vk.com/ekaterinaelizarowa" />
                         </div>
                     </div>
                     <div className="footer__middle">
                         <p className="footer__link text-xs-medium">Разработка сайта</p>
                         <div className="footer__links">
-                            <a href="#" className="text-xs-medium underline">Блещунова Дмитрий</a>
-                            <a href="#" className="text-xs-medium underline">Елизавета Моглич</a>
-                            <a href="#" className="text-xs-medium underline">Власта Стельмах</a>
+                            <a href="https://t.me/dmitrybleschunov" className="text-xs-medium underline">Блещунов Дмитрий</a>
+                            <a href="https://vk.com/elizavetamoglich" className="text-xs-medium underline">Елизавета Моглич</a>
+                            <a href="https://t.me/gold_and_glitter" className="text-xs-medium underline">Власта Стельмах</a>
                         </div>
                     </div>
                     <a href="#" className="text-xs-medium underline footer__bottom">Политика конфиденциальности</a>
                 </div>
-            </Container>
+            </div>
         </footer>
     )
 }

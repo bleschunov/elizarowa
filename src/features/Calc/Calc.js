@@ -1,6 +1,7 @@
 import { Formik, Form, useFormikContext } from 'formik'
 import useTotal from './hooks/useTotal'
 import * as Yup from 'yup'
+import { Fade } from 'react-awesome-reveal'
 
 import DropdownInput from '../Input/DropdownInput'
 import Input from '../Input/Input'
@@ -57,60 +58,73 @@ const Calc = () => {
     })
 
     return (
-        <section className="calc">
+        <section className="calc" id="calc">
             <Container>
                 <div className="flex">
+                    
                     <Title 
                         title="Калькулятор"
                         subtitle="Рассчитайте стоимость с учётом ваших потребностей" />
+
+                    
                     <div className="calc__flex">
-                        <div className="sm">
-                            <img src="./images/childWithToys.png" alt="нарисованный ребёнок" />
-                        </div>
-                        <Formik
-                            initialValues={{
-                                workStart: '08:00',
-                                workFinish: '19:00',
-                                walk: false,
-                                walkTime: '',
-                                homework: false,
-                                drawing: true
-                            }}
-                            initialTouched={{
-                                workStart: false
-                            }}
-                            validateOnBlur={false}
-                            validationSchema={validationSchema}>
-                            <Form className="calc__card card">
-                                <DropdownInput
-                                    name="workStart"
-                                    placeholder="09:00"
-                                    label="Начало работы"
-                                    options={time} />
-                                <DropdownInput
-                                    name="workFinish"
-                                    placeholder="09:00"
-                                    label="Конец работы"
-                                    options={time} />
-                                <Checkbox 
-                                    name="walk"
-                                    text="Прогулка"
-                                    helper="+100₽/час" />
-                                <Input
-                                    name="walkTime"
-                                    placeholder="Введите число..."
-                                    label="Кол-во часов прогулки" />
-                                <Checkbox 
-                                    name="homework"
-                                    text="Помощь с домашним заданием"
-                                    helper="+700₽" />
-                                <Checkbox 
-                                    name="drawing"
-                                    text="Урок рисования"
-                                    helper="+1000₽" />
-                                <Total />
-                            </Form>
-                        </Formik>
+                        <Fade
+                            direction='left'
+                            triggerOnce
+                        >
+                            <div className="sm">
+                                <img src="./images/childWithToys.png" alt="нарисованный ребёнок" />
+                            </div>
+                        </Fade>
+                        <Fade
+                            direction='right'
+                            triggerOnce
+                        >
+                            <Formik
+                                initialValues={{
+                                    workStart: '08:00',
+                                    workFinish: '19:00',
+                                    walk: false,
+                                    walkTime: '',
+                                    homework: false,
+                                    drawing: true
+                                }}
+                                initialTouched={{
+                                    workStart: false
+                                }}
+                                validateOnBlur={false}
+                                validationSchema={validationSchema}>
+                                <Form className="calc__card card">
+                                    <DropdownInput
+                                        name="workStart"
+                                        placeholder="09:00"
+                                        label="Начало работы"
+                                        options={time} />
+                                    <DropdownInput
+                                        name="workFinish"
+                                        placeholder="09:00"
+                                        label="Конец работы"
+                                        options={time} />
+                                    <Checkbox 
+                                        name="walk"
+                                        text="Прогулка"
+                                        helper="+100₽/час" />
+                                    <Input
+                                        name="walkTime"
+                                        placeholder="Введите число..."
+                                        label="Кол-во часов прогулки" />
+                                    <Checkbox 
+                                        name="homework"
+                                        text="Помощь с домашним заданием"
+                                        helper="+700₽" />
+                                    <Checkbox 
+                                        name="drawing"
+                                        text="Урок рисования"
+                                        helper="+1000₽" />
+                                    <Total />
+                                </Form>
+                            </Formik>
+                        </Fade>
                     </div>
                 </div>
             </Container>

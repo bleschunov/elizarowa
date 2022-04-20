@@ -18,6 +18,14 @@
         transform: translate(-50%, -100%);
     }
 
+    &__link {
+        transition: color 300ms;
+
+        &:hover {
+            color: $rose400;
+        }
+    }
+
     &__widget {
         border: none;
         width: 100%;
