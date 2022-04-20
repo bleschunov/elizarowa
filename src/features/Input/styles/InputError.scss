@@ -1,0 +1,19 @@
+@import '../../../styles/vars.scss';
+
+.input_error {
+    & .input__box {
+        border-color: $error300; 
+    }
+
+    & .input__hint {
+        color: $error500;
+    }
+
+    & .input__icon_error {
+        display: inline-block;
+    }
+
+    & .input__box {
+        border-color: $error300;
+    }
+}

@@ -8,7 +8,8 @@ const TelegramButton = ({ children }) => {
     return (
         <Button 
             size="lg"
-            type="telegram"
+            hierarchy="telegram"
+            type="button"
             icon={ <Icon name="telegram" width="20" height="20" color={vars.telegramGradient}/> }>
                 {children}
         </Button>

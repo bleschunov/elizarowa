@@ -1,5 +1,9 @@
 @import './styles/vars.scss';
 
+html {
+  font-size: 16px;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   color: $gray900;

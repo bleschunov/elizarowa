@@ -1,7 +1,21 @@
-.app {
-    padding: 60px;
-}   
+@import './styles/vars.scss';
+@import './styles/fonts.scss';
+@import './styles/units.scss';
+@import './styles/shadows.scss';
+@import './styles/bp.scss';
 
-.app > * {
-    margin-bottom: 30px;
+.card {
+    background-color: $secondary;
+    @include getShadow('shadow-md');
+    border-radius: rem(16px);
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    gap: rem(48px);
+
+    @media screen and (min-width: 768px) {
+        gap: rem(72px);
+    }
 }

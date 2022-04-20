@@ -1,0 +1,105 @@
+@import '../../../styles/vars.scss';
+@import '../../../styles/units.scss';
+@import '../../../styles/fonts.scss';
+@import '../../../styles/shadows.scss';
+
+@import './InputFocus.scss';
+@import './InputSuccess.scss';
+@import './InputError.scss';
+@import './InputDisabled.scss';
+
+.input {
+    display: flex;
+    flex-direction: column;
+    gap: rem(6px);
+
+    &__label {
+        color: $gray700;
+        @include getFontStyles('text-sm', 'medium');
+    }
+
+    &__box {
+        position: relative;
+
+        display: flex;
+        align-items: center;
+        gap: rem(8px);
+
+        border: 1px solid $gray300;
+        border-radius: rem(8px);
+        padding: 0 rem(14px);
+        background-color: $white;
+
+        transition: box-shadow 300ms;
+    }
+
+    &__icon_success, &__icon_error {
+        display: none;
+    }
+
+    &__icon_arrow {
+        cursor: pointer;
+        transition: transform 300ms;
+    }
+
+    &__hint {
+        color: $gray500;
+        @include getFontStyles('text-sm', 'regular');
+    }
+
+    &__input {
+        color: $gray900;
+        padding: rem(10px) 0;
+
+        flex-grow: 1;
+
+        &::placeholder {
+            color: $gray500;
+        }
+
+        &_select::selection {
+            background-color: transparent;
+        }
+    }
+
+    $itemHeight: rem(44px);
+
+    &__window {
+        display: none;
+        position: absolute;
+        width: calc(100% + 2px);
+        max-height: calc($itemHeight * 5);
+
+        bottom: 0;
+        left: 0;
+        transform: translateY(calc( 100% + rem(8px) ));
+        z-index: 10;
+        
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+
+        @include getShadow('shadow-lg');
+        border: 1px solid $gray100;
+        border-radius: rem(8px);
+        background-color: $white;
+    }
+
+    &__item {
+        cursor: pointer;
+        padding: rem(10px) rem(14px);
+        @include getFontStyles('text-md', 'regular');
+
+        height: $itemHeight;
+        background-color: $white;
+
+        &:hover {
+            background-color: $gray50;
+        }
+
+        &_focus {
+            background-color: $gray50;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+@import '../../styles/units.scss';
+@import '../../styles/vars.scss';
+
+.prices {
+    background-color: $background;
+
+    &__flex {
+        display: flex;
+        flex-direction: column;
+        gap: rem(48px);
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: rem(48px);
+    }
+}

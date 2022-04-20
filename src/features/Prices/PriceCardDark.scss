@@ -1,0 +1,16 @@
+@import '../../styles/vars.scss';
+@import '../../styles/units.scss';
+@import '../../styles/shadows.scss';
+
+.priceCard_dark {
+    background-color: $accent!important;
+    color: $white;
+
+    & .priceCard__comments {
+        color: $gray200;
+    }
+
+    & .priceCard__additionalInfo {
+        color: $gray200;
+    }
+}

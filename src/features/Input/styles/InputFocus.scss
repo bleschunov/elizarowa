@@ -1,0 +1,15 @@
+@import '../../../styles/shadows.scss';
+
+.input:focus-within {
+    & .input__box {
+        @include getShadow('focusedShadow-xs-primary');
+    }
+
+    & .input__window {
+        display: block;
+    }
+
+    & .input__icon_arrow {
+        transform: rotate(180deg);
+    }
+}

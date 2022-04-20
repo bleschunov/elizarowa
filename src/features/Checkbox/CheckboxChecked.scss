@@ -1,0 +1,11 @@
+@import '../../styles/units.scss';
+@import '../../styles/vars.scss';
+@import './vars.scss';
+
+.checkbox__checkbox:checked {
+    background-color: $rose400;
+
+    &:before {
+        transform: translateX( calc( rem($width) - 100% - rem($padding) * 2 ) );
+    }
+}

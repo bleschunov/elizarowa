@@ -1,0 +1,19 @@
+@import '../../../styles/vars.scss';
+
+.input_success {
+    & .input__box {
+        border-color: $success300;
+    }
+
+    & .input__hint {
+        color: $success500;
+    }
+
+    & .input__icon_success {
+        display: inline-block;
+    }
+
+    & .input__box {
+        border-color: $success300;
+    }
+}

@@ -1,0 +1,8 @@
+@import '../../../styles/vars.scss';
+
+.input_disabled {
+    & .input__box {
+        background-color: $gray50;
+        cursor: not-allowed;
+    }
+}

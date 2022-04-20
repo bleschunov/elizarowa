@@ -1,0 +1,11 @@
+@import '../../styles/units.scss';
+
+.container {
+    padding: rem($containerPaddingY) rem($containerPaddingX);
+    max-width: rem($containerMaxWidth);
+    margin: 0 auto;
+
+    @media screen and (min-width: 1000px) {
+        padding: rem($containerLargePaddingY) rem($containerLargePaddingX)
+    }
+}

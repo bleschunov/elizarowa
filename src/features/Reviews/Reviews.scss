@@ -1,0 +1,18 @@
+@import '../../styles/vars.scss';
+@import '../../styles/units.scss';
+
+.reviews {
+    background-color: $background;
+
+    &__flex {
+        display: flex;
+        flex-direction: column;
+        gap: rem(48px);
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: rem(48px);
+    }
+}

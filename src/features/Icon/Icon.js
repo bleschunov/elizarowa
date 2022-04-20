@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 
-const Icon = ({ name, className, color='black', width='32', height='32' }) => {
+const Icon = ({ name, className, color='black', width='32', height='32', ...props }) => {
     const classes = classNames('icon', className)
 
     const style = { 
@@ -10,7 +10,7 @@ const Icon = ({ name, className, color='black', width='32', height='32' }) => {
     }
 
     return (
-        <svg className={classes} style={style}>
+        <svg className={classes} style={style} {...props}>
             <use xlinkHref={`/sprite.svg#${name}`}></use>
         </svg>
     )

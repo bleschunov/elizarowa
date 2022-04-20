@@ -1,0 +1,55 @@
+@import '../../styles/vars.scss';
+@import '../../styles/units.scss';
+@import '../../styles/shadows.scss';
+@import './CheckboxChecked.scss';
+@import './vars.scss';
+
+.checkbox {
+    display: flex;
+    gap: rem(12px);
+
+    &__pGroup {
+        display: flex;
+        flex-direction: column;
+        gap: rem(2px);
+    }
+
+    &__text {
+        color: $gray700;
+    }
+
+    &__helper {
+        color: $gray500;
+    }
+
+    &__checkbox {
+        padding: rem($padding);
+        flex-shrink: 0;
+
+        width: rem($width);
+        height: rem($height);
+        
+        border-radius: rem(12px);
+
+        background-color: $gray100;
+        transition: background-color 300ms;
+
+        &:before {
+            content: '';
+            display: block;   
+            
+            transition: transform 300ms;
+
+            height: rem(20px);
+            width: rem(20px);
+
+            border-radius: 50%;
+            @include getShadow('shadow-sm');
+            background-color: $white;
+        }
+
+        &:focus {
+            @include getShadow('focusedShadow-xs-primary');
+        }
+    }
+}

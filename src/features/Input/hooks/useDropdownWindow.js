@@ -1,31 +1,23 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
-// value для фильтрации списка
-// setValue для выбора нужного значения из списка
-// options содержит элементы списка
-// input для снятия фокусировки с инпута
-const useDropdownWindow = (options, input, value, setValue) => {
-    
-    const [filteredOptions, setFilteredOptions] = useState(options)
+const useDropdownWindow = ({ options, setValue, inputRef}) => {
     // -1 означает, что никакой элемент не выделен
-    const [focusedItem, setFocusedItem] = useState(-1)
+    const [focusedItem, setFocusedItem] = useState(0)
     const [boundaryItems, setBoundaryItems] = useState({top: 0, bottom: 4})
-
-    console.log(filteredOptions)
 
     // Для скролла
     const dropdownWindowRef = useRef()
     // Для изменения классов выделения
-    const items = useRef([])
+    const itemsRef = useRef([])
     
     // Снять выделения со всех элементов
     const blurAllItems = () => {
-        items.current.forEach(item => item?.classList.remove('input__item_focused'))
+        itemsRef.current.forEach(item => item?.classList.remove('input__item_focus'))
     }
 
-    // Выделить элемент в индексом index
+    // Выделить элемент с индексом index
     const selectFocusedItem = (index) => {
-        items.current[index].classList.add('input__item_focused')
+        itemsRef.current[index].classList.add('input__item_focus')
     }
 
     const onKeyDown = (event) => {
@@ -36,7 +28,7 @@ const useDropdownWindow = (options, input, value, setValue) => {
             setFocusedItem(value => {
                 let newValue
                 if (value === -1) newValue = 0
-                else newValue = value === filteredOptions.length - 1 ? 0 : value + 1
+                else newValue = value === options.length - 1 ? 0 : value + 1
 
                 blurAllItems()
                 selectFocusedItem(newValue)
@@ -52,8 +44,8 @@ const useDropdownWindow = (options, input, value, setValue) => {
             
             setFocusedItem(value => {
                 let newValue
-                if (value === -1) newValue = filteredOptions.length - 1
-                else newValue = value === 0 ? filteredOptions.length - 1 : value - 1
+                if (value === -1) newValue = options.length - 1
+                else newValue = value === 0 ? options.length - 1 : value - 1
                 
                 blurAllItems()
                 selectFocusedItem(newValue)
@@ -64,36 +56,32 @@ const useDropdownWindow = (options, input, value, setValue) => {
 
         // Если мы нажали энтер и если есть выделенный элемент
         // Мы ставим значение элемента в инпут
-        if (event.code === 'Enter' && focusedItem !== -1) {
-            setValue(filteredOptions[focusedItem])
-            input.current.blur()
+        if (event.code === 'Enter') {
+            if (focusedItem !== -1) {
+                // console.log(focusedItem)
+                onSelectItem(options[focusedItem])
+            } else {
+                dropdownWindowRef.current.scroll({ top: 0 })
+                inputRef.current.blur()
+            }
         }
     }
 
-    const onSelectItem = (event) => {
-        setValue(event.target.textContent)
-        input.current.blur()
-    }
-
-    // Если меняется значение в инпуте, мы фильтруем значения
-    useEffect(() => {
-        setFilteredOptions(options?.filter(option => {
-            return new RegExp(`^${value}`).test(option) || option.includes(value)
-        }))
-    }, [value])
-    // Когда отфильтровали значения, мы правим объект с якорями
-    // А также снимаем выделение со всех значений
-    useEffect(() => {
-        items.current = items.current.slice(0, filteredOptions?.length)
-        setFocusedItem(-1)
+    const onSelectItem = value => {
+        setValue(value)
+        setFocusedItem(0)
         blurAllItems()
-    }, [filteredOptions])
+        selectFocusedItem(0)
+        dropdownWindowRef.current.scroll({ top: 0 })
+        inputRef.current.blur()
+    }
 
     // Если какой-либо элемент выделен
     // Мы проверяем, находится ли этот элемент в видимой зоне
     // Если нет, то мы меняем границы выдимой зоны
     useEffect(() => {
-        const isFocusedItemOutsideVisibleArea = focusedItem < boundaryItems.top || focusedItem > boundaryItems.bottom
+        const isFocusedItemOutsideVisibleArea = 
+            focusedItem < boundaryItems.top || focusedItem > boundaryItems.bottom
         if (focusedItem !== -1 && isFocusedItemOutsideVisibleArea) {
             setBoundaryItems((prev) => {
                 // Смотрим в какую сторону подвинуть границы видимой зоны
@@ -112,14 +100,14 @@ const useDropdownWindow = (options, input, value, setValue) => {
         }
 
         if (focusedItem === -1) {
-            items.current.forEach(item => item?.classList.remove('input__item_focused'))
+            itemsRef.current.forEach(item => item?.classList.remove('input__item_focused'))
         }
     }, [focusedItem])
     // Когда мы поменяли границы видимой зоны,
     // Мы реализуем эти границы с помощью скролла окна с значениями
     useEffect(() => {
-        if (items.current.length !== 0) {
-            const itemHeight = parseInt(window.getComputedStyle(items.current[0]).height)
+        if (itemsRef.current.length !== 0) {
+            const itemHeight = parseInt(window.getComputedStyle(itemsRef.current[0]).height)
 
             dropdownWindowRef.current.scroll({
                 top: boundaryItems.top * itemHeight
@@ -127,28 +115,21 @@ const useDropdownWindow = (options, input, value, setValue) => {
         }
     }, [boundaryItems])
 
-    const dropdownWindow = (
-        <div className="input__window" ref={dropdownWindowRef}>
-            <ul className="input__list">
-                {filteredOptions?.map((option, index) => (
-                    <li 
-                        key={index}
-                        ref={item => items.current[index] = item}
-                        className="input__item"
-                        onMouseOver={() => setFocusedItem(-1)}
-                        onMouseDown={event => event.preventDefault()}
-                        onClick={onSelectItem}>
-                            {option}
-                    </li>
-                ))}
-            </ul>
-        </div>
-    )
+    // Когда отфильтровали значения, мы правим объект с якорями
+    // А также снимаем выделение со всех значений
+    useEffect(() => {
+        itemsRef.current = itemsRef.current.slice(0, options?.length)
+        setFocusedItem(0)
+        blurAllItems()
+        selectFocusedItem(0)
+    }, [options])
 
     return {
-        onKeyDown,
-        dropdownWindow
-    }
+        itemsRef, 
+        dropdownWindowRef, 
+        onSelectItem, 
+        onKeyDown, 
+        setFocusedItem }
 }
 
 export default useDropdownWindow

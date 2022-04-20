@@ -1,0 +1,51 @@
+@import '../../styles/vars.scss';
+@import '../../styles/units.scss';
+
+.callback {
+    background-color: $background;
+
+    &__flex {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: rem(48px);
+
+        @media screen and (min-width: 768px) {
+            align-items: flex-end;
+            justify-content: space-between;
+            flex-direction: row;
+        }
+    }
+
+    &__card {
+        padding: rem(24px);
+        display: flex;
+        flex-direction: column;
+        gap: rem(48px);
+
+        max-width: rem(468px);
+    }
+
+    &__button {
+        align-self: start;
+    }
+
+    &__footer {
+        color: $gray400;
+
+        & > span {
+            text-decoration: underline;
+        }
+    }
+
+    &__successfulMessage {
+        display: flex;
+        flex-direction: column;
+        gap: rem(24px);
+        align-items: center;
+    }
+
+    &__successfulText {
+        text-align: center;
+    }
+}

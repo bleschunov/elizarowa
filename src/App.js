@@ -1,13 +1,23 @@
-import Button from './features/Button/Button'
-import TelegramButton from './features/Button/TelegramButton'
-import VkButton from './features/Button/VkButton';
+import Header from './features/Header/Header'
+import Hero from './features/Hero/Hero'
+import About from './features/About/About'
+import Advantages from './features/Advantages/Advantages'
+import Reviews from './features/Reviews/Reviews'
+import Prices from './features/Prices/Prices'
+import Calc from './features/Calc/Calc'
+import Callback from './features/Callback/Callback'
+import Telegram from './features/Telegram/Telegram'
+import Footer from './features/Footer/Footer'
 
-import Input from './features/Input/Input';
+import { Formik, Form } from 'formik'
+import * as Yup from 'yup'
+import Input from './features/Input/Input'
+import DropdownInput from './features/Input/DropdownInput'
+import Select from './features/Input/Select'
+import Checkbox from './features/Checkbox/Checkbox'
 
-import './App.scss';
-import DropdownInput from './features/Input/DropdownInput';
-
-
+import 'animate.css';
+import './App.scss'
 
 function App() {
 
@@ -22,39 +32,18 @@ function App() {
 
   return (
     <div className="app">
-      {/* <Button type="primary" size="2xl" icon={ <Icon name="telegram" width="20" height="20" color="white" /> } >Label</Button> */}
-      <Button type="primary" size="xl">Label</Button>
-      <Button type="primary" size="lg">Label</Button>
-      <Button type="primary" size="md">Label</Button>
-      <Button type="primary" size="sm" disabled>Label</Button>
-
-      <TelegramButton>Label</TelegramButton>
-      <VkButton></VkButton>
-
-      <Button type="linkGray" size="sm">button</Button>
-      <Button type="linkGray" size="md">button</Button>
-      <Button type="linkGray" size="lg">button</Button>
-      <Button className="" type="linkGray" size="xl" disabled>button</Button>
-
-      <Input
-        type="text"
-        label="text"
-        hint="helpertext"
-        placeholder="9:00" />
-
-      <DropdownInput
-        type="text"
-        label="text"
-        hint="helpertext"
-        placeholder="9:00"
-        options={mockedData} />
-
-      {/* <Select 
-        label="text"
-        hint="helpertext"
-        placeholder="9:00"
-        options={mockedData} /> */}
-
+      <Header />
+      <main>
+        <Hero />
+        <About />
+        <Advantages />
+        <Reviews />
+        <Prices />
+        <Calc />
+        <Callback />
+        <Telegram />
+      </main>
+      <Footer />
     </div>
   );
 }

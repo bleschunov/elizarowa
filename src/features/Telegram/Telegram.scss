@@ -1,0 +1,45 @@
+@import '../../styles/vars.scss';
+@import '../../styles/units.scss';
+
+.telegram {
+    background-color: $background;
+
+    &__inner {
+        position: relative;
+        cursor: pointer;
+    }
+
+    &__arrow {
+        position: absolute;
+        left: 50%;
+
+        display: none;
+
+        transform: translate(-50%, -100%);
+    }
+
+    &__widget {
+        border: none;
+        width: 100%;
+        height: rem(230px);
+        overflow: hidden;
+    }
+
+    &__overlayer {
+        position: absolute;
+        right: calc(50% - 3.5px);
+        bottom: 0;
+        transform: translateX(50%);
+        
+        height: 20%;
+        width: calc(100% - 7px);
+        max-width: 455px;
+        
+        background: linear-gradient(180deg, rgba(231, 243, 241, 0) 0%, #E7F3F1 100%);
+
+        @media screen and (min-width: 386px) {
+            right: calc(50% - 22.5px);
+            width: calc(100% - 45px);
+        }
+    }
+}

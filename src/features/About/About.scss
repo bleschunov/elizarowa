@@ -1,0 +1,46 @@
+@import '../../styles/vars.scss';
+@import '../../styles/units.scss';
+@import '../../styles/fonts.scss';
+
+.about {
+    background-color: $background;
+
+    &__flex {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: rem(48px);
+    }
+
+    &__image {
+        max-width: 350px;
+    }
+
+    &__pGroup {
+        display: flex;
+        flex-direction: column;
+        gap: rem(27px);
+        text-align: center;
+        
+
+    }
+
+    &__text {
+        &:first-child {
+            @include getFontStyles('text-lg', 'regular');
+
+            @media screen and (min-width: 1000px) {
+                @include getFontStyles('display-sm', 'regular');
+            }
+        }
+
+        &:last-child {
+            @include getFontStyles('text-md', 'regular');
+
+            @media screen and (min-width: 1000px) {
+                @include getFontStyles('display-xs', 'regular');
+            }
+        }
+    }
+
+}

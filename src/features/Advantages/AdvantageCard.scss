@@ -1,0 +1,29 @@
+@import '../../styles/vars.scss';
+@import '../../styles/units.scss';
+@import '../../styles/shadows.scss';
+
+.advantageCard {
+    width: rem(200px);
+    height: rem(200px);
+    padding: rem(24px);
+
+    @media screen and (min-width: 1000px) {
+        width: rem(232px);
+        height: rem(232px);
+        padding: rem(48px);
+    }
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: rem(10px);
+
+    &__img {
+        width: rem(75px);
+        height: rem(75px);
+    }
+
+    &__title {
+        text-align: center;
+    }
+}

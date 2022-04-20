@@ -6,7 +6,7 @@ import './styles/Input.scss'
 import SUCCESS_ERROR_ICONS from './_SuccessErrorIcons'
 import INPUT_LAYOUT from './_InputLayout'
 
-const Input = ({ className, state, type, name, placeholder, label, hint, iconBefore }) => { 
+const Textarea = ({ className, state, name, placeholder, label, hint, iconBefore }) => { 
     const [field, { error, touched }] = useField(name)   
     
     const inputRef = useRef()
@@ -21,17 +21,18 @@ const Input = ({ className, state, type, name, placeholder, label, hint, iconBef
             error={error}
             hint={hint}
             iconBefore={iconBefore}>
-            <input 
+            <textarea 
                 {...field}
                 className="input__input"
                 ref={inputRef}
-                type={type} 
                 placeholder={placeholder}
                 autoComplete="off"
-                disabled={state === 'disabled'} />
+                disabled={state === 'disabled'}
+                rows='5'
+                style={{ resize: 'none' }} />
             <SUCCESS_ERROR_ICONS state={state} />
         </INPUT_LAYOUT>
     )
 }
 
-export default Input
+export default Textarea

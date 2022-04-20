@@ -1,0 +1,51 @@
+@import '../../styles/vars.scss';
+@import '../../styles/units.scss';
+
+.priceCard {    
+    padding: rem(24px);
+    height: rem(290px);
+    width: rem(290px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: rem(16px);
+
+    text-align: center;
+
+    &__container {
+        padding: rem($containerPaddingY) rem($containerPaddingX);
+        max-width: rem(1280px);
+        margin: 0 auto;
+
+        @media screen and (min-width: 1000px) {
+            padding: rem($containerLargePaddingY) rem($containerLargePaddingX);
+        }
+    }
+
+    &__top {
+        display: flex;
+        flex-direction: column;
+        gap: rem(8px);
+    }
+
+    &__comments {
+        color: $accent;
+    }
+
+    &__bottom {
+        display: flex;
+        flex-direction: column;
+        gap: rem(24px);
+    }
+
+    &__footer {
+        display: flex;
+        flex-direction: column;
+        gap: rem(4px);
+    }
+
+    &__additionalInfo {
+        color: $accent;
+    }
+}

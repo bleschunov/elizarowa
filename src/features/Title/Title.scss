@@ -1,0 +1,26 @@
+@import '../../styles/units.scss';
+@import '../../styles/fonts.scss';
+
+.title {
+    display: flex;
+    flex-direction: column;
+    gap: rem(16px);
+
+    text-align: center;
+    
+    &__title {
+        @include getFontStyles('display-sm', 'semibold');
+
+        @media screen and (min-width: 1000px) {
+            @include getFontStyles('display-xl', 'semibold');
+        }
+    }
+
+    &__subtitle {
+        @include getFontStyles('display-xs', 'regular');
+
+        @media screen and (min-width: 1000px) {
+            @include getFontStyles('display-md', 'regular');
+        }
+    }
+}

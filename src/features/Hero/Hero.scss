@@ -1,0 +1,77 @@
+@import '../../styles/vars.scss';
+@import '../../styles/units.scss';
+@import '../../styles/fonts.scss';
+
+.hero {
+    background-color: $secondary;
+
+    &__container {
+        padding: rem($containerPaddingY) rem($containerPaddingX) 0;
+        max-width: rem(1280px);
+        margin: 0 auto;
+
+        @media screen and (min-width: 1000px) {
+            padding: rem($containerLargePaddingY) rem($containerLargePaddingX) 0;
+        }
+    }
+
+    &__flex {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: rem(48px);
+
+        @media screen and (min-width: 768px) {
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 0;
+        }
+    }
+
+    &__headerGroup {
+        flex-basis: 50%;
+    }
+
+    &__title {
+        margin-bottom: rem(16px);
+
+        @include getFontStyles('display-lg', 'semibold');
+
+        @media screen and (min-width: 480px) {
+            @include getFontStyles('display-xl', 'semibold');
+        }
+
+        @media screen and (min-width: 768px) {
+            @include getFontStyles('display-2xl', 'semibold');
+        }
+
+        @media screen and (min-width: 1000px) {
+            @include getFontStyles('display-3xl', 'semibold');
+        }
+    }
+
+    &__subtitle {
+        @include getFontStyles('display-sm', 'medium');
+
+        @media screen and (min-width: 480px) {
+            margin-bottom: rem(48px);
+            @include getFontStyles('display-lg', 'regular');
+        }
+
+        @media screen and (min-width: 768px) {
+            @include getFontStyles('display-xl', 'regular');
+        }
+
+        @media screen and (min-width: 1000px) {
+            @include getFontStyles('display-xl', 'regular');
+        }
+    }
+
+    &__image {
+        align-self: flex-end;
+
+        & img {
+            display: block;
+        }
+    }
+}

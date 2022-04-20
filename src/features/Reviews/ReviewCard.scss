@@ -1,0 +1,91 @@
+@import '../../styles/vars.scss';
+@import '../../styles/units.scss';
+@import '../../styles/shadows.scss';
+@import '../../styles/fonts.scss';
+
+.reviewCard {
+    padding: rem(24px);
+
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: rem(24px);
+
+    @media screen and (min-width: 768px) {
+        padding: rem(32px) rem(24px);
+        flex-direction: row;
+        gap: rem(48px);
+    }
+
+    @media screen and (min-width: 1000px) {
+        padding: rem(32px) rem(96px);
+    }
+
+    &__person {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: rem(16px);
+
+        flex-grow: 1;
+    }
+
+    &__thumbnail {
+        width: rem(125px);
+
+        @media screen and (min-width: 768px) {
+            width: rem(150px);
+        }
+    }
+
+    &__hGroup {
+        text-align: center;
+    }
+
+    &__name {
+        @include getFontStyles('text-sm', 'semibold');
+
+        @media screen and (min-width: 768px) {
+            @include getFontStyles('text-md', 'semibold');
+        }
+    }
+
+    &__title {
+        color: $accent;
+
+        @include getFontStyles('text-sm', 'regular');
+        
+        @media screen and (min-width: 768px) {
+            @include getFontStyles('text-md', 'regular');
+        }
+    }
+
+    &__divider {
+        width: 80%;
+        border-bottom: 1px solid $accent;
+
+        @media screen and (min-width: 768px) {
+            display: none;
+        }
+    }
+
+    &__pGroup {
+        @media screen and (min-width: 768px) {
+            max-width: rem(370px);
+        }
+    }
+
+    &__paragraph {
+        margin-bottom: rem(16px);
+        @include getFontStyles('text-sm', 'regular');
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        @media screen and (min-width: 768px) {
+            @include getFontStyles('text-md', 'medium');
+        }
+    }
+}

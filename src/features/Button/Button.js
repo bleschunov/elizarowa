@@ -4,11 +4,11 @@ import PropTypes from 'prop-types'
 import './Button.scss'
 
 
-const Button = ({ className, type, size, children, icon, disabled }) => {
+const Button = ({ className, hierarchy, type, size, children, icon, disabled }) => {
     const classes = classNames(
         className,
         'button',
-        `button_${type}`,
+        `button_${hierarchy}`,
         `button_${size}`,
         {
             [`button_${size}_onlyIcon`]: !children
@@ -16,7 +16,7 @@ const Button = ({ className, type, size, children, icon, disabled }) => {
     )
 
     return (
-        <button className={classes} disabled={disabled}>
+        <button className={classes} type={type} disabled={disabled}>
             {icon}
             {children}
         </button>

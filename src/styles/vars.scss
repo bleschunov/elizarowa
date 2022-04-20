@@ -41,11 +41,15 @@ $secondary: #F2EAE6;
 $telegramGradient: #27A8EA;
 $vkColor: #2789F6;
 
-$containerPadding: 24px 16px;
-
 $basicFontSize: 16px;
+$containerMaxWidth: 960px;
+$containerPaddingY: 64px;
+$containerPaddingX: 16px;
+$containerLargePaddingY: 96px;
+$containerLargePaddingX: 32px;
 
 :export {
+    rose400: $rose400;
     telegramGradient: $telegramGradient;
     vkColor: $vkColor;
     success500: $success500;

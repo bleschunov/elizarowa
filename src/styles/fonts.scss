@@ -4,6 +4,7 @@
 @use './units.scss';
 
 $sizes: (
+    'display-3xl': (rem(110px), rem(98px)),
     'display-2xl': (rem(72px), rem(90px)),
     'display-xl': (rem(60px), rem(72px)),
     'display-lg': (rem(48px), rem(60px)),
@@ -33,10 +34,6 @@ $weights: (
     font-weight: $weight;
 }
 
-.text {
-    @include getFontStyles('text-sm', 'regular');
-}
-
 @each $sizeName, $font in $sizes {
     @each $weightName, $weightValue in $weights {
         .#{$sizeName}-#{$weightName} {
@@ -51,4 +48,8 @@ $weights: (
             font-weight: $weightValue;
         }
     }
+}
+
+.underline {
+    text-decoration: underline;
 }

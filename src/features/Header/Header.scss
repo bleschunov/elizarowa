@@ -1,0 +1,37 @@
+@import '../../styles/vars.scss';
+@import '../../styles/units.scss';
+
+.header {
+    background-color: $secondary;
+
+    position: sticky;
+    top: 0;
+
+    &__container {
+        padding: rem(16px) rem($containerPaddingX);
+        max-width: rem($containerMaxWidth);
+        margin: 0 auto;
+
+        @media screen and (min-width: 1000px) {
+            padding: rem(16px) rem($containerLargePaddingX);
+        }
+    }
+
+    &__flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__iconGroup {
+        display: flex;
+        align-items: center;
+        gap: rem(24px);
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: rem(32px);
+    }
+}

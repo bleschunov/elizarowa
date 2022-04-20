@@ -8,7 +8,8 @@ const VkButton = ({ children }) => {
     return (
         <Button 
             size="lg"
-            type="vk"
+            hierarchy="vk"
+            type="button"
             icon={ <Icon name="vk" width="20" height="20" color={vars.vkColor}/> }>
                 {children}
         </Button>

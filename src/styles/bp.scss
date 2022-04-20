@@ -1,0 +1,31 @@
+.xs {
+    display: none;
+
+    @media screen and (min-width: 480px) {
+        display: unset;
+    }
+}
+
+.sm {
+    display: none;
+
+    @media screen and (min-width: 768px) {
+        display: unset;
+    }
+}
+
+.md {
+    display: none;
+
+    @media screen and (min-width: 1000px) {
+        display: unset;
+    }
+}
+
+.lg {
+    display: none;
+
+    @media screen and (min-width: 1366px) {
+        display: unset;
+    }
+}

@@ -1,0 +1,50 @@
+@import '../../styles/vars.scss';
+@import '../../styles/units.scss';
+
+.footer {
+    background-color: $secondary;
+
+    &__flex {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: rem(48px);
+    }
+
+    &__top {
+        display: flex;
+        flex-direction: column;
+        gap: rem(24px);
+
+        @media screen and (min-width: 768px) {
+            flex-direction: row;
+            gap: rem(24px);
+        }
+    }
+
+    &__middle {
+        display: flex;
+        flex-direction: column;
+        gap: rem(24px);
+
+        @media screen and (min-width: 768px) {
+            flex-direction: row;
+        }
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+        gap: rem(12px);
+
+        @media screen and (min-width: 768px) {
+            flex-direction: row;
+            gap: rem(24px);
+        }
+    }
+    
+    &__bottomIcons {
+        display: flex;
+        gap: rem(24px);
+    }
+}
