@@ -1,5 +1,4 @@
 import { Fade } from 'react-awesome-reveal'
-import { forwardRef } from "react"
 
 import './Advantages.scss'
 import './AdvantageCard.scss'

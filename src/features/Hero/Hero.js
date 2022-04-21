@@ -12,9 +12,7 @@ const Hero = () => {
 
     const { ref } = useParallax({ 
         translateY: ['0%', '50%'],
-        shouldAlwaysCompleteAnimation: true,
-        // startScroll: 100,
-        // endScroll: 200
+        shouldAlwaysCompleteAnimation: true
     })
 
     return (

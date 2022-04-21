@@ -1,7 +1,7 @@
 import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 import { Fade } from 'react-awesome-reveal'
-import { forwardRef } from "react"
+import emailjs from '@emailjs/browser';
 
 import Button from '../Button/Button'
 import Input from '../Input/Input'
@@ -21,7 +21,7 @@ const Callback = () => {
     const listOfPreferences = [ 'Телеграм', 'Вотсап', 'Вайбер', 'СМС' ]
     const validationSchema = Yup.object().shape({
         name: Yup.string().required('Как вас зовут?'),
-        tel: Yup.string().required('Введите ваш номер телефона'),
+        phone: Yup.string().required('Введите ваш номер телефона'),
         info: Yup.string(),
         preferences: Yup.string().oneOf(listOfPreferences, 'Выберите вариант из списка')
     })
@@ -34,36 +34,51 @@ const Callback = () => {
                         title="Оставьте заявку, и я перезвоню"
                         subtitle="Обсудим наше сотрудничество во всех деталях" />
                     <div className="callback__flex">
-                        
                         <Fade
                             direction='left'
                             fraction={0.4}
                             triggerOnce
                         >
                             <Formik
+                                initialStatus='idle'
                                 initialValues={{
                                     name: '',
-                                    tel: '',
+                                    phone: '',
                                     info: '',
                                     preferences: 'Телеграм'
                                 }}
                                 validationSchema={validationSchema}
                                 onSubmit={(values, { resetForm, setSubmitting, setStatus }) => {
-                                    console.log(JSON.stringify(values))
-                                    resetForm()
-                                    setStatus('submitted')
-                                    setSubmitting(false)
+
+                                    setStatus('submissionInProgress')
+
+                                    const 
+                                        serviceId = 'service_bwxc78m',
+                                        templateId = 'template_dlwij2d',
+                                        publicKey = 'OAEOE29iSCK_HbsEK'
+
+                                    emailjs.send(serviceId, templateId, values, publicKey)
+                                        .then(() => {
+                                            resetForm()
+                                            setStatus('submitted')
+                                        })
+                                        .catch(() => {
+                                            setStatus('submissionError')
+                                        })
+                                        .finally(() => {
+                                            setSubmitting(false)
+                                        })
                                 }} >
                                 {
-                                    ({ status, isSubmitting, isValidating }) => {
-                                        if (status !== 'submitted') return (
+                                    ({ status }) => {
+                                        if (status === 'idle') return (
                                             <Form className="callback__card card">
                                                 <Input
                                                     name="name"
                                                     label="Имя"
                                                     placeholder="Дмитрий" />
                                                 <Input 
-                                                    name="tel"
+                                                    name="phone"
                                                     label="Телефон"
                                                     placeholder="+7-XXX-XXX-XX-XX" />
                                                 <Textarea
@@ -79,7 +94,7 @@ const Callback = () => {
                                                     type="submit"
                                                     hierarchy="primary"
                                                     size="xl"
-                                                    disabled={ isSubmitting && isValidating }>
+                                                    disabled={ status === 'submissionInProgress' }>
                                                         Отправить
                                                 </Button>
                                                 <p className="callback__footer text-xs-regular">
@@ -87,7 +102,7 @@ const Callback = () => {
                                                 </p>
                                             </Form>
                                         )
-                                        else return (
+                                        else if (status === 'submitted') return (
                                             <div className="callback__card card callback__successfulMessage">
                                                 <Icon 
                                                     className="callback__successfulIcon"
@@ -97,6 +112,19 @@ const Callback = () => {
                                                     height="72" />
                                                 <p className="text-lg-regular callback__successfulText">
                                                     Спасибо за заявку! Я перезвоню в ближайшее время!
+                                                </p>            
+                                            </div>
+                                        ) 
+                                        else if (status === 'submissionError') return (
+                                            <div className="callback__card card callback__successfulMessage">
+                                                <Icon 
+                                                    className="callback__successfulIcon"
+                                                    name="error" 
+                                                    color={vars.error500}
+                                                    width="72"
+                                                    height="72" />
+                                                <p className="text-lg-regular callback__successfulText">
+                                                    Не получилось отправить форму. Пожалуйста, перезагрузите страницу или попробуйте позже
                                                 </p>            
                                             </div>
                                         )
