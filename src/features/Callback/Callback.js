@@ -62,7 +62,7 @@ const Callback = () => {
                                                 <Input 
                                                     name="tel"
                                                     label="Телефон"
-                                                    placeholder="+7-903-730-34-83" />
+                                                    placeholder="+7-XXX-XXX-XX-XX" />
                                                 <Textarea
                                                     name="info"
                                                     label="Комментарий"

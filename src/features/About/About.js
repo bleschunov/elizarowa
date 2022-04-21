@@ -18,7 +18,7 @@ const About = () => {
                         damping=".07"
                         triggerOnce
                     >
-                        <img className="about__image" src="/images/kateDrawing.png" alt="катя, нарисованная" />
+                        <img className="about__image" src="./images/kateDrawing.png" alt="катя, нарисованная" />
                         <div className="about__pGroup">
                             <p className="about__text">
                                 Учусь на третьем курсе психологического факультета. Изучила основы детской психологии и прошла курс первой помощи Красного Креста.

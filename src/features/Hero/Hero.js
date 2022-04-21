@@ -52,7 +52,7 @@ const Hero = () => {
                             direction="right"
                             triggerOnce
                         >
-                            <img src="/images/katePhoto.png" alt="катя" />
+                            <img src="./images/katePhoto.png" alt="катя" />
                         </Fade>
                     </div>
                 </div>

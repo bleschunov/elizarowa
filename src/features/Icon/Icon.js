@@ -11,7 +11,7 @@ const Icon = ({ name, className, color='black', width='32', height='32', ...prop
 
     return (
         <svg className={classes} style={style} {...props}>
-            <use xlinkHref={`/sprite.svg#${name}`}></use>
+            <use xlinkHref={`./sprite.svg#${name}`}></use>
         </svg>
     )
 }
