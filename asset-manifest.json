@@ -1,13 +1,21 @@
 {
   "files": {
-    "main.css": "/elizarowa/static/css/main.75b35386.css",
-    "main.js": "/elizarowa/static/js/main.eb56a8ff.js",
+    "main.css": "/elizarowa/static/css/main.04fc0995.css",
+    "main.js": "/elizarowa/static/js/main.501c0de1.js",
+    "static/media/katePhoto.png": "/elizarowa/static/media/katePhoto.a11a62bf7ebdcf4fbbe2.png",
+    "static/media/kateDrawing.png": "/elizarowa/static/media/kateDrawing.b1fa60c086721ca3259b.png",
+    "static/media/kateWithCat.png": "/elizarowa/static/media/kateWithCat.f1e92d989fb98fe5ff36.png",
+    "static/media/ava_2.png": "/elizarowa/static/media/ava_2.1662ba088962672e5525.png",
+    "static/media/ava_1.png": "/elizarowa/static/media/ava_1.948a156edcdf501887fc.png",
+    "static/media/ava_3.png": "/elizarowa/static/media/ava_3.179a7c70a26407c10fca.png",
+    "static/media/childWithToys.png": "/elizarowa/static/media/childWithToys.e1f23316b7c21233567e.png",
+    "static/media/sprite.svg": "/elizarowa/static/media/sprite.33dd52d14a6e3f7d09cdef5eef88cc03.svg",
     "index.html": "/elizarowa/index.html",
-    "main.75b35386.css.map": "/elizarowa/static/css/main.75b35386.css.map",
-    "main.eb56a8ff.js.map": "/elizarowa/static/js/main.eb56a8ff.js.map"
+    "main.04fc0995.css.map": "/elizarowa/static/css/main.04fc0995.css.map",
+    "main.501c0de1.js.map": "/elizarowa/static/js/main.501c0de1.js.map"
   },
   "entrypoints": [
-    "static/css/main.75b35386.css",
-    "static/js/main.eb56a8ff.js"
+    "static/css/main.04fc0995.css",
+    "static/js/main.501c0de1.js"
   ]
 }
