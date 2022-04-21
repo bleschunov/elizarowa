@@ -1,5 +1,6 @@
 import Iframe from 'react-iframe'
 import { Fade } from 'react-awesome-reveal'
+import { forwardRef } from "react"
 
 import Container from '../Container/Container'
 import Title from '../Title/Title'
@@ -10,14 +11,14 @@ import vars from '../../styles/vars.scss'
 
 const Telegram = () => {
     return (
-       <section className="telegram">
+       <section className="telegram" >
             <Container>
                 <div className="flex">
                     <Title 
                         title="Подписывайтесь на мой телеграм-канал про детей" 
-                        subtitle={<><a className="telegram__link underline" href="https://t.me/ekaterinaelizarowapro">Жми</a>, чтобы прочитать полностью</>} />
+                        subtitle={<><a className="telegram__link underline" href="https://t.me/ekaterinaelizarowapro">Жмите</a>, чтобы прочитать полностью</>} />
                     <Fade
-                        direction='down'
+                        fraction={1}
                         triggerOnce
                     >
                         <div className="telegram__inner">

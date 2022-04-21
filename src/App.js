@@ -1,4 +1,5 @@
-import Loader from './features/Loader/Loader'
+import { ParallaxBanner, ParallaxProvider } from 'react-scroll-parallax'
+
 import Header from './features/Header/Header'
 import Hero from './features/Hero/Hero'
 import About from './features/About/About'
@@ -25,20 +26,22 @@ function App() {
   }
 
   return (
-    <div className="app">
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Advantages />
-        <Reviews />
-        <Prices />
-        <Calc />
-        <Callback />
-        <Telegram />
-      </main>
-      <Footer />
-    </div>
+    <ParallaxProvider>
+      <div className="app">
+        <Header />
+        <main>
+          <Hero />
+          <About />
+          <Advantages />
+          <Reviews />
+          <Prices />
+          <Calc />
+          <Callback />
+          <Telegram />
+        </main>
+        <Footer />
+      </div>
+    </ParallaxProvider>
   );
 }
 

@@ -44,4 +44,12 @@
             color: $rose400;
         }
     }
+
+    &__socLink {
+        transition: color 300ms;
+
+        &:hover {
+            color: $rose400!important;
+        }
+    }
 }

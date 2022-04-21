@@ -1,7 +1,5 @@
-import Button from '../Button/Button'
 import TelegramButton from '../Button/TelegramButton'
 import VkButton from '../Button/VkButton'
-import Container from '../Container/Container'
 import './Footer.scss'
 
 const Footer = () => {

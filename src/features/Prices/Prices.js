@@ -1,6 +1,7 @@
 import { cloneElement } from "react"
 import classNames from "classnames"
 import { Fade } from 'react-awesome-reveal'
+import { forwardRef } from "react"
 
 import Container from "../Container/Container"
 import Title from "../Title/Title"
@@ -43,7 +44,7 @@ const Prices = () => {
     }
 
     return (
-        <section className="prices" id="prices">
+        <section className="prices" id="prices" >
             <div className="prices__container">
                 <div className="flex">
                     <Title 
@@ -52,8 +53,8 @@ const Prices = () => {
                     <ul className="prices__list">
                         <Fade
                             cascade
-                            damping={0.07}
-                            direction='down'
+                            damping={0.2}
+                            fraction={1}
                             triggerOnce
                         >
                             <li>

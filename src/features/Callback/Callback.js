@@ -1,6 +1,7 @@
 import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 import { Fade } from 'react-awesome-reveal'
+import { forwardRef } from "react"
 
 import Button from '../Button/Button'
 import Input from '../Input/Input'
@@ -13,6 +14,7 @@ import Icon from '../Icon/Icon'
 import './Callback.scss'
 import '../../styles/fonts.scss'
 import vars from '../../styles/vars.scss'
+import kateWithCat from '../../images/kateWithCat.png'
 
 
 const Callback = () => {
@@ -25,7 +27,7 @@ const Callback = () => {
     })
 
     return (
-        <section className="callback" id="callback">
+        <section className="callback" id="callback" >
             <Container>
                 <div className="flex">
                     <Title 
@@ -35,6 +37,7 @@ const Callback = () => {
                         
                         <Fade
                             direction='left'
+                            fraction={0.4}
                             triggerOnce
                         >
                             <Formik
@@ -103,10 +106,11 @@ const Callback = () => {
                         </Fade>
                         <Fade
                             direction='right'
+                            fraction={1}
                             triggerOnce
                         >
                             <div className="sm">
-                                <img src="./images/kateWithCat.png" alt="нарисованная катя с кошкой" />
+                                <img src={kateWithCat} alt="нарисованная катя с кошкой" />
                             </div>
                         </Fade>
                     </div>

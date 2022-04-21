@@ -5,6 +5,8 @@
 .about {
     background-color: $background;
 
+    position: relative;
+
     &__flex {
         display: flex;
         flex-direction: column;
@@ -21,8 +23,6 @@
         flex-direction: column;
         gap: rem(27px);
         text-align: center;
-        
-
     }
 
     &__text {

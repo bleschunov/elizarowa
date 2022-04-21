@@ -8,8 +8,8 @@ const Title = ({ title, subtitle }) => {
 
     return (
         <Fade
-            direction='down'
             triggerOnce
+            fraction={1}
         >
             <hgroup className="title">
                 

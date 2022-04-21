@@ -1,15 +1,25 @@
 import Button from "../Button/Button"
 import { Bounce, Fade } from 'react-awesome-reveal'
+import { useParallax } from "react-scroll-parallax"
 
 import './Hero.scss'
+import katePhoto from '../../images/katePhoto.png'
+
 
 const Hero = () => {
     const name = 'Екатерина'.split('')
     const surname = 'Елизарова'.split('')
 
+    const { ref } = useParallax({ 
+        translateY: ['0%', '50%'],
+        shouldAlwaysCompleteAnimation: true,
+        // startScroll: 100,
+        // endScroll: 200
+    })
+
     return (
         <section className="hero">
-            <div className="hero__container">
+            <div className="hero__container" ref={ref}>
                 <div className="hero__flex">
                     <hgroup className="hero__headerGroup">
                         <h1 className="hero__title">
@@ -52,7 +62,7 @@ const Hero = () => {
                             direction="right"
                             triggerOnce
                         >
-                            <img src="./images/katePhoto.png" alt="катя" />
+                            <img src={katePhoto} alt="катя" />
                         </Fade>
                     </div>
                 </div>

@@ -2,6 +2,7 @@ import { Formik, Form, useFormikContext } from 'formik'
 import useTotal from './hooks/useTotal'
 import * as Yup from 'yup'
 import { Fade } from 'react-awesome-reveal'
+import { forwardRef } from "react"
 
 import DropdownInput from '../Input/DropdownInput'
 import Input from '../Input/Input'
@@ -11,6 +12,7 @@ import Title from '../Title/Title'
 
 import '../../styles/fonts.scss'
 import './Calc.scss'
+import childWithToys from '../../images/childWithToys.png'
 
 
 const Calc = () => {
@@ -58,7 +60,7 @@ const Calc = () => {
     })
 
     return (
-        <section className="calc" id="calc">
+        <section className="calc" id="calc" >
             <Container>
                 <div className="flex">
                     
@@ -70,14 +72,16 @@ const Calc = () => {
                     <div className="calc__flex">
                         <Fade
                             direction='left'
+                            fraction={1}
                             triggerOnce
                         >
                             <div className="sm">
-                                <img src="./images/childWithToys.png" alt="нарисованный ребёнок" />
+                                <img src={childWithToys} alt="нарисованный ребёнок" />
                             </div>
                         </Fade>
                         <Fade
                             direction='right'
+                            fraction={0.4}
                             triggerOnce
                         >
                             <Formik

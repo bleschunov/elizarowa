@@ -7,6 +7,8 @@
 .checkbox {
     display: flex;
     gap: rem(12px);
+    
+    cursor: pointer;
 
     &__pGroup {
         display: flex;
@@ -46,6 +48,10 @@
             border-radius: 50%;
             @include getShadow('shadow-sm');
             background-color: $white;
+        }
+
+        &:hover {
+            @include getShadow('focusedShadow-xs-primary');
         }
 
         &:focus {

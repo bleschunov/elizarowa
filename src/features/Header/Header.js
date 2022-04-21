@@ -25,8 +25,8 @@ const Header = () => {
                             </ul>
                         </nav>
                         <div className="header__iconGroup">
-                            <a href="https://t.me/ekaterina_elizarowa"><Icon name="telegram" width="32" height="32" color={vars.accent} /></a>
-                            <a href="https://vk.com/ekaterinaelizarowa"><Icon name="vk" width="32" height="32" color={vars.accent} /></a>
+                            <a href="https://t.me/ekaterina_elizarowa"><Icon className="header__socLink" name="telegram" width="32" height="32" color={vars.accent} /></a>
+                            <a href="https://vk.com/ekaterinaelizarowa"><Icon className="header__socLink" name="vk" width="32" height="32" color={vars.accent} /></a>
                         </div>
                         <Button href="#callback" hierarchy="primary" type="button" size="sm">СВЯЗАТЬСЯ</Button>
                     </div>

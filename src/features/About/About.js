@@ -1,10 +1,13 @@
 import Title from "../Title/Title"
 import Container from "../Container/Container"
 import { Fade } from 'react-awesome-reveal'
+import { forwardRef } from "react"
 
 import './About.scss'
+import kateDrawing from '../../images/kateDrawing.png'
 
 const About = () => {
+
     return (
         <section className="about" id="about">
             <Container>
@@ -14,11 +17,11 @@ const About = () => {
                         subtitle="Всё, что вы хотите знать обо мне, и даже больше " />
                     <Fade
                         cascade
-                        direction="down"
-                        damping=".07"
+                        damping=".2"
+                        fraction={1}
                         triggerOnce
                     >
-                        <img className="about__image" src="./images/kateDrawing.png" alt="катя, нарисованная" />
+                        <img className="about__image" src={kateDrawing} alt="катя, нарисованная" />
                         <div className="about__pGroup">
                             <p className="about__text">
                                 Учусь на третьем курсе психологического факультета. Изучила основы детской психологии и прошла курс первой помощи Красного Креста.
