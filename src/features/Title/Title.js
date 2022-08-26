@@ -9,13 +9,13 @@ const Title = ({ title, subtitle }) => {
     return (
         <Fade
             triggerOnce
-            fraction={1}
+            fraction={0.2}
         >
             <hgroup className="title">
                 
-                    <h3 className="title__title">{title}</h3>
-                    <h4 className="title__subtitle">{subtitle}</h4>
-                
+                { title && <h3 className="title__title">{title}</h3> }
+                { subtitle && <h4 className="title__subtitle">{subtitle}</h4> }
+                    
             </hgroup>
         </Fade>
     )

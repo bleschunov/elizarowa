@@ -19,6 +19,7 @@
 
     &__card {
         padding: rem(24px);
+
         display: flex;
         flex-direction: column;
         gap: rem(48px);
@@ -33,7 +34,7 @@
     &__footer {
         color: $gray400;
 
-        & > span {
+        & > a {
             text-decoration: underline;
         }
     }

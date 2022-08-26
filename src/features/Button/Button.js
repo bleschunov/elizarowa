@@ -1,10 +1,11 @@
 import classNames from "classnames"
 import PropTypes from 'prop-types'
+import { HashLink as Link } from 'react-router-hash-link'
 
 import './Button.scss'
 
 
-const Button = ({ className, hierarchy, type, size, children, icon, disabled, href }) => {
+const Button = ({ className, hierarchy, type, size, children, icon, disabled, href, component }) => {
     const classes = classNames(
         className,
         'button',
@@ -16,19 +17,26 @@ const Button = ({ className, hierarchy, type, size, children, icon, disabled, hr
     )
 
 
-    if (!href) {
+    if (component === 'a') {
+        return (
+            <a href={href} className={classes} type={type} disabled={disabled} target="_blank">
+                {icon}
+                {children}
+            </a>
+        )
+    } else if (component === 'link') {
+        return (
+            <Link to={href} className={classes} type={type} disabled={disabled}>
+                {icon}
+                {children}
+            </Link>
+        )
+    } else {
         return (
             <button className={classes} type={type} disabled={disabled}>
                 {icon}
                 {children}
             </button>
-        )
-    } else {
-        return (
-            <a href={href} className={classes} type={type} disabled={disabled}>
-                {icon}
-                {children}
-            </a>
         )
     }
 }
@@ -38,6 +46,10 @@ Button.propTypes = {
     size: PropTypes.string.isRequired,
     icon: PropTypes.element,
     disabled: PropTypes.bool
+}
+
+Button.defaultProps = {
+    component: "button"
 }
 
 export default Button

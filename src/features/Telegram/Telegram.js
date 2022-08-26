@@ -16,9 +16,9 @@ const Telegram = () => {
                 <div className="flex">
                     <Title 
                         title="Подписывайтесь на мой телеграм-канал про детей" 
-                        subtitle={<><a className="telegram__link underline" href="https://t.me/ekaterinaelizarowapro">Жмите</a>, чтобы прочитать полностью</>} />
+                        subtitle={<><a className="telegram__link underline" href="https://t.me/ekaterinaelizarowapro" target="_blank">Жмите</a>, чтобы прочитать полностью</>} />
                     <Fade
-                        fraction={1}
+                        fraction={0.2}
                         triggerOnce
                     >
                         <div className="telegram__inner">

@@ -1,47 +1,23 @@
-import { ParallaxBanner, ParallaxProvider } from 'react-scroll-parallax'
+// import { ParallaxProvider } from 'react-scroll-parallax'
+import { Outlet } from 'react-router-dom'
 
 import Header from './features/Header/Header'
-import Hero from './features/Hero/Hero'
-import About from './features/About/About'
-import Advantages from './features/Advantages/Advantages'
-import Reviews from './features/Reviews/Reviews'
-import Prices from './features/Prices/Prices'
-import Calc from './features/Calc/Calc'
-import Callback from './features/Callback/Callback'
-import Telegram from './features/Telegram/Telegram'
 import Footer from './features/Footer/Footer'
 
 import 'animate.css';
 import './App.scss'
 
 function App() {
-
-  const mockedData = []
-  for (let i = 0; i < 24; i++) {
-    for (let j = 0; j < 2; j++) {
-      const hh = String(i).length === 1 ? `0${i}` : i
-      const mm = j === 0 ? '00' : '30'
-      mockedData.push(`${hh}:${mm}`)
-    }
-  }
-
   return (
-    <ParallaxProvider>
+    // <ParallaxProvider>
       <div className="app">
         <Header />
         <main>
-          <Hero />
-          <About />
-          <Advantages />
-          <Reviews />
-          <Prices />
-          <Calc />
-          <Callback />
-          <Telegram />
+          <Outlet />
         </main>
         <Footer />
       </div>
-    </ParallaxProvider>
+    // </ParallaxProvider>
   );
 }
 

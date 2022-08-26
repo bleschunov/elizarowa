@@ -47,11 +47,11 @@ const Reviews = () => {
                 <div className="flex">
                     <Title 
                         title="Что говорят обо мне клиенты"
-                        subtitle="Многие из них работают со мной на постоянной основе" />
+                    />
                         <ul className="reviews__list">
                             <Fade 
                                 direction="left"
-                                fraction={1}
+                                fraction={0.2}
                                 triggerOnce
                             >
                                 <li>
@@ -66,7 +66,7 @@ const Reviews = () => {
                             </Fade>
                             <Fade 
                                 direction="right"
-                                fraction={1}
+                                fraction={0.2}
                                 triggerOnce
                             >
                                 <li>
@@ -82,7 +82,7 @@ const Reviews = () => {
                             </Fade>
                             <Fade 
                                 direction="left"
-                                fraction={1}
+                                fraction={0.2}
                                 triggerOnce
                             >
                                 <li>

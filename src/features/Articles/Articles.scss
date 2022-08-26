@@ -1,0 +1,52 @@
+@import '../../styles/vars.scss';
+@import '../../styles/units.scss';
+@import '../../styles/fonts.scss';
+
+.articles {
+    background-color: $background;
+
+    &__flex {
+        display: flex;
+        flex-direction: column;
+        gap: rem(48px);
+
+        @media screen and (min-width: 768px) {
+            align-items: center;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 0;
+        }
+    }
+
+    &__article {
+        @include getFontStyles('text-xl', 'regular');
+
+        @media screen and (min-width: 1000px) {
+            @include getFontStyles('display-sm', 'regular');
+        }
+
+        transition: color 300ms;
+
+        cursor: pointer;
+        
+        &:hover {
+            color: $rose400;
+        }
+    }
+
+    &__doc {
+        width: rem(20px);
+        height: rem(20px);
+
+        @media screen and (min-width: 1000px) {
+            width: rem(30px);
+            height: rem(30px);
+        }
+
+        margin-right: rem(8px);
+
+        vertical-align: center;
+
+        color: inherit!important;
+    }
+}

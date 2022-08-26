@@ -1,7 +1,5 @@
-import Title from "../Title/Title"
 import Container from "../Container/Container"
 import { Fade } from 'react-awesome-reveal'
-import { forwardRef } from "react"
 
 import './About.scss'
 import kateDrawing from '../../images/kateDrawing.png'
@@ -12,13 +10,10 @@ const About = () => {
         <section className="about" id="about">
             <Container>
                 <div className="about__flex">
-                    <Title 
-                        title="Итак, меня зовут Екатерина..."
-                        subtitle="Всё, что вы хотите знать обо мне, и даже больше " />
                     <Fade
                         cascade
                         damping=".2"
-                        fraction={1}
+                        fraction={0.2}
                         triggerOnce
                     >
                         <img className="about__image" src={kateDrawing} alt="катя, нарисованная" />

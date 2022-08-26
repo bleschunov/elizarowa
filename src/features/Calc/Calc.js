@@ -2,7 +2,6 @@ import { Formik, Form, useFormikContext } from 'formik'
 import useTotal from './hooks/useTotal'
 import * as Yup from 'yup'
 import { Fade } from 'react-awesome-reveal'
-import { forwardRef } from "react"
 
 import DropdownInput from '../Input/DropdownInput'
 import Input from '../Input/Input'
@@ -72,8 +71,9 @@ const Calc = () => {
                     <div className="calc__flex">
                         <Fade
                             direction='left'
-                            fraction={1}
+                            fraction={0.2}
                             triggerOnce
+                            className="sm"
                         >
                             <div className="sm">
                                 <img src={childWithToys} alt="нарисованный ребёнок" />
@@ -81,7 +81,7 @@ const Calc = () => {
                         </Fade>
                         <Fade
                             direction='right'
-                            fraction={0.4}
+                            fraction={0.2}
                             triggerOnce
                         >
                             <Formik
@@ -120,11 +120,11 @@ const Calc = () => {
                                     <Checkbox 
                                         name="homework"
                                         text="Помощь с домашним заданием"
-                                        helper="+700₽" />
+                                        helper="+500₽" />
                                     <Checkbox 
                                         name="drawing"
                                         text="Урок рисования"
-                                        helper="+1000₽" />
+                                        helper="+800₽" />
                                     <Total />
                                 </Form>
                             </Formik>

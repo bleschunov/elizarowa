@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import sprite from '../../sprite.svg'
 
-const Icon = ({ name, className, color='black', width='32', height='32', ...props }) => {
+const Icon = ({ name, className, width, height, color='black', ...props }) => {
     const classes = classNames('icon', className)
 
     const style = { 

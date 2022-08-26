@@ -90,7 +90,7 @@ const useTotal = ({values, errors}) => {
             }
 
             if (homework) totalPrice += 700
-            if (drawing) totalPrice += 1000
+            if (drawing) totalPrice += 800
 
             totalPrice = Math.floor(totalPrice)
 

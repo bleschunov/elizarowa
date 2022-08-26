@@ -1,0 +1,22 @@
+.privacy {
+    background-color: #E7F3F1;
+}
+
+.privacyCard {
+    padding: 24px;
+
+    & h1, h2 {
+        font-size: revert;
+        font-weight: revert;
+        margin: revert;
+    }
+
+    & ul {
+        padding: revert;
+        margin: revert;
+    }
+
+    & p {
+        margin: revert;
+    }
+}

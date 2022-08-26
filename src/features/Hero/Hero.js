@@ -1,6 +1,6 @@
 import Button from "../Button/Button"
 import { Bounce, Fade } from 'react-awesome-reveal'
-import { useParallax } from "react-scroll-parallax"
+// import { useParallax } from "react-scroll-parallax"
 
 import './Hero.scss'
 import katePhoto from '../../images/katePhoto.png'
@@ -10,14 +10,14 @@ const Hero = () => {
     const name = 'Екатерина'.split('')
     const surname = 'Елизарова'.split('')
 
-    const { ref } = useParallax({ 
-        translateY: ['0%', '50%'],
-        shouldAlwaysCompleteAnimation: true
-    })
+    // const { ref } = useParallax({ 
+    //     translateY: ['0%', '50%'],
+    //     shouldAlwaysCompleteAnimation: true
+    // })
 
     return (
-        <section className="hero">
-            <div className="hero__container" ref={ref}>
+        <section className="hero" id="hero">
+            <div className="hero__container" >
                 <div className="hero__flex">
                     <hgroup className="hero__headerGroup">
                         <h1 className="hero__title">
@@ -38,10 +38,7 @@ const Hero = () => {
                                 triggerOnce
                             >
                                 { surname.map((letter, index) => <span key={index}>{letter}</span>) }
-                            </Bounce>   
-                                    
-                                
-                            
+                            </Bounce>           
                         </h1>
         
                         <Fade
@@ -50,8 +47,8 @@ const Hero = () => {
                             direction="up"
                             triggerOnce
                         >
-                            <h2 className="hero__subtitle">Няня и бебиситер</h2>
-                            <Button href="#callback" className="md" hierarchy="primary" type="button" size="2xl">СВЯЗАТЬСЯ</Button>
+                            <h2 className="hero__subtitle">Няня и бебиситер<br />в Москве</h2>
+                            <Button href="#callback" className="md" hierarchy="primary" type="button" size="2xl" component="link">СВЯЗАТЬСЯ</Button>
                         </Fade>
                     </hgroup>
                     <div className="hero__image">

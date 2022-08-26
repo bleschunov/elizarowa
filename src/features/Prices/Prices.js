@@ -1,9 +1,7 @@
 import { cloneElement } from "react"
 import classNames from "classnames"
 import { Fade } from 'react-awesome-reveal'
-import { forwardRef } from "react"
 
-import Container from "../Container/Container"
 import Title from "../Title/Title"
 
 import './Prices.scss'
@@ -11,7 +9,7 @@ import './PriceCard.scss'
 import './PriceCardDark.scss'
 import '../../styles/fonts.scss'
 
-const Prices = () => {
+const Prices = ({ setModalDialogue }) => {
     const PriceCard = ({ title, time, comments, price, children, dark }) => {
         let additionalInfoWithProps
         if (children) {
@@ -54,7 +52,7 @@ const Prices = () => {
                         <Fade
                             cascade
                             damping={0.2}
-                            fraction={1}
+                            fraction={0.2}
                             triggerOnce
                         >
                             <li>
@@ -64,7 +62,7 @@ const Prices = () => {
                                     comments="Идеально подойдет всем, кто днем работает в офисе"
                                     price="600₽/час" >
                                         <p>+100₽/час — прогулка</p>
-                                        <p>+700₽ — помощь с домашним заданием</p>
+                                        <p>+500₽ — помощь с домашним заданием</p>
                                 </PriceCard>
                             </li>
                             <li>
@@ -79,8 +77,8 @@ const Prices = () => {
                                 <PriceCard 
                                     title="Урок рисования"
                                     comments="Я не учу детей рисовать «правильно», вместо этого я рассказываю, как нарисовать то, что хочется"
-                                    price="1000₽/занятие">
-                                        <p>*от 6 лет</p>
+                                    price="800₽/час">
+                                        <p onClick={ () => setModalDialogue(true) }><span>Сертификат</span></p>
                                 </PriceCard>
                             </li>
                         </Fade>

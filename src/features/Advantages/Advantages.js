@@ -25,7 +25,7 @@ const Advantages = () => {
                     <Fade
                         cascade
                         damping={0.2}
-                        fraction={1}
+                        fraction={0.2}
                         triggerOnce
                     >
                         <li><AdvantageCard img={hands} title="Работаю няней более 2-х лет" alt="руки" /></li>

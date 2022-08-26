@@ -2,6 +2,7 @@ import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 import { Fade } from 'react-awesome-reveal'
 import emailjs from '@emailjs/browser';
+import { Link } from 'react-router-dom'
 
 import Button from '../Button/Button'
 import Input from '../Input/Input'
@@ -36,7 +37,7 @@ const Callback = () => {
                     <div className="callback__flex">
                         <Fade
                             direction='left'
-                            fraction={0.4}
+                            fraction={0.2}
                             triggerOnce
                         >
                             <Formik
@@ -71,7 +72,7 @@ const Callback = () => {
                                 }} >
                                 {
                                     ({ status }) => {
-                                        if (status === 'idle') return (
+                                        if (status === 'idle' || status === 'submissionInProgress') return (
                                             <Form className="callback__card card">
                                                 <Input
                                                     name="name"
@@ -98,7 +99,7 @@ const Callback = () => {
                                                         Отправить
                                                 </Button>
                                                 <p className="callback__footer text-xs-regular">
-                                                    Нажимая на кнопку Отправить, вы даёте своё согласие на обработку персональных данных и соглашаетесь с <span>политикой конфиденциальности</span>
+                                                    Нажимая на кнопку Отправить, вы даёте своё согласие на обработку персональных данных и соглашаетесь с <Link to="/privacy">политикой конфиденциальности</Link>
                                                 </p>
                                             </Form>
                                         )
@@ -111,7 +112,7 @@ const Callback = () => {
                                                     width="72"
                                                     height="72" />
                                                 <p className="text-lg-regular callback__successfulText">
-                                                    Спасибо за заявку! Я перезвоню в ближайшее время!
+                                                    Спасибо за заявку! Я свяжусь с вами в ближайшее время!
                                                 </p>            
                                             </div>
                                         ) 
@@ -134,8 +135,9 @@ const Callback = () => {
                         </Fade>
                         <Fade
                             direction='right'
-                            fraction={1}
+                            fraction={0.2}
                             triggerOnce
+                            className="sm"
                         >
                             <div className="sm">
                                 <img src={kateWithCat} alt="нарисованная катя с кошкой" />
