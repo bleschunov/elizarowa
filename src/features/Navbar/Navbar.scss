@@ -1,0 +1,27 @@
+@import '../../styles/vars.scss';
+@import '../../styles/units.scss';
+
+.navbar {
+
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: rem(32px);
+
+        &_row {
+            flex-direction: row;
+        }
+
+        &_column {
+            flex-direction: column;
+        }
+    }
+
+    &__link {
+        transition: color 300ms;
+
+        &:hover {
+            color: $rose400;
+        }
+    }
+}

@@ -1,0 +1,68 @@
+@import '../../styles/vars.scss';
+@import '../../styles/units.scss';
+@import '../../styles/shadows.scss';
+
+.sidebar {
+    display: none;
+
+    position: fixed;
+    top: 0;
+    
+    width: 100vw;
+    height: 100vh;
+
+    z-index: 1000;
+
+    &__inner {
+        position: absolute;
+        right: 0;
+
+        height: 100%;
+        width: 80%;
+        max-width: rem(348px);
+
+        background-color: $background;
+        @include getShadow('shadow-3xl');
+
+        padding: rem(16px) rem(24px);
+    }
+
+    &__crossWrapper {
+        text-align: right;
+    }
+
+    &__navbar {
+        position: absolute;
+
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__socLinks {
+        position: absolute;
+
+        right: rem(24px);
+        bottom: rem(16px);
+    }
+}
+
+.sidebar-enter {
+    display: block;
+    transform: translateX(100%);
+}
+.sidebar-enter-active {
+    transform: translateX(0);
+    transition: transform 300ms;
+}
+.sidebar-enter-done {
+    display: block;
+}
+.sidebar-exit {
+    display: block;
+    transform: translateX(0);
+}
+.sidebar-exit-active {
+    transform: translateX(100%);
+    transition: transform 300ms;
+}

@@ -31,25 +31,11 @@
         gap: rem(24px);
     }
 
-    &__list {
-        display: flex;
-        align-items: center;
-        gap: rem(32px);
-    }
+    &__burger {
+        cursor: pointer;
 
-    &__link {
-        transition: color 300ms;
-
-        &:hover {
-            color: $rose400;
-        }
-    }
-
-    &__socLink {
-        transition: color 300ms;
-
-        &:hover {
-            color: $rose400!important;
+        @media screen and (min-width: 1000px) {
+            display: none;
         }
     }
 }

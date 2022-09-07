@@ -1,0 +1,17 @@
+@import '../../styles/vars.scss';
+@import '../../styles/units.scss';
+
+.socLinks {
+    &__flex {
+        display: flex;
+        gap: rem(24px);
+    }
+
+    &__socLink {
+        transition: color 300ms;
+
+        &:hover {
+            color: $rose400!important;
+        }
+    }
+}
