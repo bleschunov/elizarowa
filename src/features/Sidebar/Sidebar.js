@@ -20,7 +20,7 @@ const Sidebar = ({ sidebar, setSidebar }) => {
             classNames="sidebar"
             onEntering={() => document.body.style.overflow = 'hidden'}
             onExiting={() => document.body.style.overflow = 'scroll'}>
-            <div className="sidebar" onClick={handleClick} data-layout>
+            <sidebar className="sidebar" onClick={handleClick} data-layout>
                 <div className="sidebar__inner">
                     <div className="sidebar__crossWrapper">
                         <Icon 
@@ -33,7 +33,7 @@ const Sidebar = ({ sidebar, setSidebar }) => {
                     <Navbar className="sidebar__navbar" direction="column" />
                     <SocLinks className="sidebar__socLinks" />
                 </div>
-            </div>
+            </sidebar>
         </CSSTransition>
         
     )

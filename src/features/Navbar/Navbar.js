@@ -18,6 +18,7 @@ const Navbar = ({ className, direction = 'row' }) => {
                     <li className="navbar__item"><Link to="/#reviews" className="navbar__link" data-link>Отзывы</Link></li>
                     <li className="navbar__item"><Link to="/#prices" className="navbar__link" data-link>Стоимость</Link></li>
                     <li className="navbar__item"><Link to="/#calc" className="navbar__link" data-link>Калькулятор</Link></li>
+                    <li className="navbar__item"><Link to="/#articles" className="navbar__link" data-link>Статьи</Link></li>
                 </ul>
             </nav>
         </div>
